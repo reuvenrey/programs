@@ -59,8 +59,18 @@
 			ui.style.display = 'block';
 			ui.innerHTML = "<h2>Project Console</h2><p>Welcome to Reuven's MAE 190 Shaft Design Project. Please enter your user-specified values.</p>";
 
-			container.innerHTML = "<h2>Design Parameters</h2>Please enter your design parameters. \
-				<p> \
+			container.innerHTML = "<h2>Design Parameters</h2>Please enter your design parameters."
+
+			container.innerHTML += "<p> \
+				<div style='display:inline-block'><label>Units of Measurment</label> \
+				<select> \
+					<option>Standad (MPa, N, kg)</option> \
+					<option>Imperial (Psi, Lbf, lb)</option> \
+				</select></div></p>";
+
+			container.innerHTML += "<div class='spacer' style='background:dimgray'></div>";
+			
+			container.innerHTML += "<p> \
 				<div style='display:inline-block'><label>Mean Torque</label><input id='mean-torque' type='number' placeholder='Tm'></div> \
 				<div style='display:inline-block'><label>Alternating Torque</label><input id='alt-torque' type='number' placeholder='Ta'></div> \
 				<div style='display:inline-block'><label>Mean Moment</label><input id='mean-moment' type='number' placeholder='Mm'></div> \
@@ -75,12 +85,12 @@
 				<select> \
 					<option>Steel</option> \
 				</select></div> \
-				<div style='display:inline-block'><label>Desired Factor of Safety Minimum</label><input id='minFOS' type='number' placeholder='n'></div> \
+				<div style='display:inline-block'><label>Desired Factor of Safety Minimum</label><input id='minFOS' type='number' max='5' placeholder='n'></div> \
 				</p>";
 
 			container.innerHTML += "<div class='spacer' style='background:dimgray'></div>";
 
-			container.innerHTML += "<button onclick='stepTwo()'>Continue</button>"
+			container.innerHTML += "<p><button onclick='stepTwo()'>Continue</button></p>"
 			
 		} //end of function startCode
 
