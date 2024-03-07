@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<link rel="stylesheet" href="https://reuvenrey.github.io/me/files/styleSheet.css">
+    		<link rel="icon" type="image/x-icon" href="files/images/favicon.ico">
+    		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    		<title>Shaft Design Project | MAE 190 | Reuven Reyman</title>
+	</head>
+
+	<style>
+		#fullCont{background:white; transition:0.5s;}
+		#mainContainer{}
+
+		button{padding:10px; cursor:pointer; border: 1px solid black; border-radius:5px; transition:0.5s; min-width:200px;}
+		button:hover{background:dimgray; color:white;}
+	</style>
+
+	<body onload='finishLoad()'><div id='loader'></div><div id='header'></div>
+
+		<div class='container'>
+			<h1>Shaft Design Project</h1>
+			<p>This project was completed as part of my <em>MAE 190 - Design of Machine Elements</em> course at UC San Diego. The purpose of this code is to determine a safe diameter for a mechanical shaft given user provided parameters.</p>
+		</div>
+
+		<div class='fullContainer' id='fullCont'>
+			<div class='container' id='mainContainer'>
+				<button>Start Program</button>
+				<a style='color:black; margin:20px; text-decoration:underline' href=''>View Code</a>
+			</div>
+		</div>
+		
+	<div id='footer'></div></body>
+
+	<script type='text/javascript' src='https://reuvenrey.github.io/me/files/headerScript.js'></script>
+	<script>
+	    
+	  	runHeader();
+	
+	    	function openLoader(){
+		      document.getElementById("loader").style.display = 'block';
+		      document.getElementById("loader").style.opacity = 1;
+   		}
+	</script>
+</html>
