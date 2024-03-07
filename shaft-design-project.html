@@ -9,11 +9,18 @@
 	</head>
 
 	<style>
-		#fullCont{background:white; transition:0.5s;}
-		#mainContainer{}
+		#fullCont{background:white; transition:0.5s; color:black;}
+		#mainContainer h2{color:black;}
 
 		button{padding:10px; cursor:pointer; border: 1px solid black; border-radius:5px; transition:0.5s; min-width:200px;}
 		button:hover{background:dimgray; color:white;}
+
+		input, select{padding:10px; cursor:pointer; border: 1px solid black; border-radius:5px; transition:0.5s; min-width:100px; margin:15px;}
+
+		#consoleContainer{color:black;}
+		#consoleContainer h3{color:black;}
+
+		.spacer{width:100%; height:2px;}
 	</style>
 
 	<body onload='finishLoad()'><div id='loader'></div><div id='header'></div>
@@ -25,12 +32,69 @@
 
 		<div class='fullContainer' id='fullCont'>
 			<div class='container' id='mainContainer'>
-				<button>Start Program</button>
-				<a style='color:black; margin:20px; text-decoration:underline' href=''>View Code</a>
+				<button onclick='startCode()'>Start Program</button>
+				<a style='color:black; margin:20px; text-decoration:underline' href='https://github.com/reuvenrey/programs/blob/main/shaft-design-project.html'>View Code</a>
+			</div>
+		</div>
+
+		<div class='fullContainer' style='background:white; color:black; transition:0.5s;'>
+			<div class='container' id='consoleContainer' style='font-family: "Courier New", monospace; display:none;'>
+				
 			</div>
 		</div>
 		
 	<div id='footer'></div></body>
+
+	<!-- ------------------------------------------------------------------------------------------- DESIGN PROJECT CODE ----------------------------->
+
+	<script>
+
+		const container = document.getElementById("mainContainer");
+		const ui = document.getElementById("consoleContainer"); // console: 	ui.innerHTML += "";
+
+
+		function startCode(){
+
+			console.log("Design Project Code Started");
+			ui.style.display = 'block';
+			ui.innerHTML = "<h2>Project Console</h2><p>Welcome to Reuven's MAE 190 Shaft Design Project. Please enter your user-specified values.</p>";
+
+			container.innerHTML = "<h2>Design Parameters</h2>Please enter your design parameters. \
+				<p> \
+				<div style='display:inline-block'><label>Mean Torque</label><input id='mean-torque' type='number' placeholder='Tm'></div> \
+				<div style='display:inline-block'><label>Alternating Torque</label><input id='alt-torque' type='number' placeholder='Ta'></div> \
+				<div style='display:inline-block'><label>Mean Moment</label><input id='mean-moment' type='number' placeholder='Mm'></div> \
+				<div style='display:inline-block'><label>Alternating Moment</label><input id='alt-moment' type='number' placeholder='Ma'></div> \
+				</p>";
+
+			container.innerHTML += "<div class='spacer' style='background:dimgray'></div>";
+
+			// MATERIALS - CHOOSE AROUND 4 FROM TABLE A-20 (steels and ductile materials)
+			container.innerHTML += " <p> \
+				<div style='display:inline-block'><label>Material Selection</label> \
+				<select> \
+					<option>Steel</option> \
+				</select></div> \
+				<div style='display:inline-block'><label>Desired Factor of Safety Minimum</label><input id='minFOS' type='number' placeholder='n'></div> \
+				</p>";
+
+			container.innerHTML += "<div class='spacer' style='background:dimgray'></div>";
+
+			container.innerHTML += "<button onclick='stepTwo()'>Continue</button>"
+			
+		} //end of function startCode
+
+		function inputsTwo(){
+			
+		}
+
+		
+	</script> <!-- end of design project code -->
+
+
+
+
+	
 
 	<script type='text/javascript' src='https://reuvenrey.github.io/me/files/headerScript.js'></script>
 	<script>
