@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    		<link rel="icon" type="image/x-icon" href="../files/images/favicon.ico">
+    		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    		<title id='tabTitle'>Dope Ass Clock</title>
+	</head>
+
+	<style>
+		#settingsBar{position:fixed; top:0; left:0; right:0; height:60px; background:rgba(0,0,0,0.5); padding:15px; text-align:center; transition:0.5s;}
+		#settingsBar button, select{margin:15px; padding:5px;}
+		#settingsBar label{display:inline-block; color:white;}
+
+		#showSettingBtn{position:fixed; top:15px;right:15px; transition:0.5s; opacity:0;}
+		#showSettingBtn:hover {opacity:1;}
+	</style>
+
+	<body onload='startClock()'>
+		<div id='settingsBar'>
+			<label for='backgroundChoice'>Background: </label>
+			<select id='backgroundChoice' onchange='backgroundChange()'>
+				<option>Default Gradient</option>
+				<option>City Scape</option>
+			</select>
+			<button onclick='hideSettings()'>Hide Settings</button>
+		</div>
+		<button onclick='hideSettings()' id='showSettingBtn' style='display:none'>Show Settings</button>
+	</body>
+
+	<script>
+		const tabTitle = document.getElementById("tabTitle");
+		const settingsBar = document.getElementById("settingsBar");
+		var barStatus = 1;
+		
+		function startClock(){
+			
+		}
+
+		function hideSettings(){
+			if(barStatus == 1){
+				settingsBar.style.height = 0;
+				settingsBar.style.opacity = 0;
+				barStatus = 0;
+				setInterval(function(){settingsBar.style.display='none'; document.getElementById("showSettingBtn").style.display = 'block';},500);
+			}else{
+				settingsBar.style.display = 'block';
+				settingsBar.style.height = '60px';
+				settingsBar.style.opacity = 1;
+				document.getElementById("showSettingBtn").style.display = 'none';
+				barStatus = 1;
+			}
+		}
+
+		function backgroundChange(){
+			console.log("Background Changing");
+		}
+	</script>
+	
+</html>
